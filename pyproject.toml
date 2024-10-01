@@ -8,6 +8,7 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/youzarsiph/e-commerce"
 repository = "https://github.com/youzarsiph/e-commerce"
+packages = [{ include = "e_commerce" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
