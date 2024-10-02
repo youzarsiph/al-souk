@@ -1,1 +1,1 @@
-""" ECommerce Categories """
+""" Product Categories """

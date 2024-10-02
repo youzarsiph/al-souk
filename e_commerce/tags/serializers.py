@@ -12,4 +12,4 @@ class TagSerializer(ModelSerializer):
         """Meta data"""
 
         model = Tag
-        fields = ("id", "url")
+        fields = ("id", "url", "name", "description", "created_at", "updated_at")

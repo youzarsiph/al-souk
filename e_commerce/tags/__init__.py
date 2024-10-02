@@ -1,1 +1,1 @@
-""" ECommerce product tags """
+""" Product tags """

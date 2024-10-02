@@ -12,4 +12,13 @@ class ItemSerializer(ModelSerializer):
         """Meta data"""
 
         model = Item
-        fields = ("id", "url")
+        read_only_fields = ("order", "product")
+        fields = (
+            "id",
+            "url",
+            "order",
+            "product",
+            "quantity",
+            "create_at",
+            "updated_at",
+        )

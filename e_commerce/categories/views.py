@@ -12,12 +12,16 @@ class CategoryViewSet(ModelViewSet):
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAuthenticated,)
+    search_fields = ("name", "description")
+    filterset_fields = ("name",)
+    ordering_fields = ("name", "created_at", "updated_at")
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
-            self.permission_classes += [IsAdminUser]
+            self.permission_classes = (IsAuthenticated, IsAdminUser)
+
         else:
-            self.permission_classes = [IsAuthenticated]
+            self.permission_classes = (IsAuthenticated,)
 
         return super().get_permissions()

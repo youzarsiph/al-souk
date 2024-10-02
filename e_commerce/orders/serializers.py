@@ -12,4 +12,11 @@ class OrderSerializer(ModelSerializer):
         """Meta data"""
 
         model = Order
-        fields = ("id", "url")
+        read_only_fields = ("status",)
+        fields = (
+            "id",
+            "url",
+            "status",
+            "created_at",
+            "updated_at",
+        )

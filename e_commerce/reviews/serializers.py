@@ -12,4 +12,14 @@ class ReviewSerializer(ModelSerializer):
         """Meta data"""
 
         model = Review
-        fields = ("id", "url")
+        read_only_fields = ("user", "product")
+        fields = (
+            "id",
+            "url",
+            "user",
+            "product",
+            "rating",
+            "content",
+            "created_at",
+            "updated_at",
+        )

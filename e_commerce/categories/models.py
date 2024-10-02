@@ -1,4 +1,17 @@
-""" Data Models for e_commerce.categories """
+"""
+Category model
+
+Represents a product category
+
+Model Fields:
+- name: Category name
+- description: Category description
+- updated_at: Last update
+- created_at: Date created
+
+Methods:
+- product_count: Number of products of a category
+"""
 
 from django.db import models
 
@@ -8,7 +21,7 @@ class Category(models.Model):
     """Categories"""
 
     name = models.CharField(
-        max_length=32,
+        max_length=64,
         unique=True,
         db_index=True,
         help_text="Category Name",

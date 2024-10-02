@@ -12,4 +12,14 @@ class ProductSerializer(ModelSerializer):
         """Meta data"""
 
         model = Product
-        fields = ("id", "url")
+        fields = (
+            "id",
+            "url",
+            "image",
+            "name",
+            "description",
+            "price",
+            "stock",
+            "created_at",
+            "updated_at",
+        )

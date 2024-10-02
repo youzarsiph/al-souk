@@ -1,4 +1,8 @@
-""" Data Models for e_commerce.reports """
+"""
+Report model
+
+Represents 
+"""
 
 from django.db import models
 
