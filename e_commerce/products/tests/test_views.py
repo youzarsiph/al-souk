@@ -1,10 +1,13 @@
 """ Tests for e_commerce.products.views """
 
-from django.test import TestCase
+from rest_framework.test import APITestCase
 
 
 # Create your view tests here.
-class ProductViewTests(TestCase):
+class ProductViewTests(APITestCase):
     """Product view tests"""
 
-    pass
+    def setUp(self) -> None:
+        """Setup before tests"""
+
+        return super().setUp()

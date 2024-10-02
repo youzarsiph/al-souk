@@ -8,6 +8,6 @@ class TagTests(TestCase):
     """Tag model tests"""
 
     def setUp(self) -> None:
-        """Setup data"""
+        """Setup before tests"""
 
         return super().setUp()

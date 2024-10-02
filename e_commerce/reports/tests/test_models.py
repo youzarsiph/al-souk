@@ -7,4 +7,7 @@ from django.test import TestCase
 class ReportTests(TestCase):
     """Report model tests"""
 
-    pass
+    def setUp(self) -> None:
+        """Setup before tests"""
+
+        return super().setUp()

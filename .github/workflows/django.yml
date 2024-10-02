@@ -26,13 +26,15 @@ jobs:
           python -m django startproject mysite
           mv e_commerce mysite
           cd mysite
-          echo "INSTALLED_APPS += ['e_commerce', 'e_commerce.categories', 'e_commerce.items', 'e_commerce.orders', 'e_commerce.products', 'e_commerce.reports', 'e_commerce.reviews', 'e_commerce.tags', 'rest_framework']" >> mysite/settings.py
+          echo "AUTH_USER_MODEL = 'users.User'" >> mysite/settings.py
+          echo "INSTALLED_APPS += ['e_commerce', 'e_commerce.categories', 'e_commerce.items', 'e_commerce.orders', 'e_commerce.products', 'e_commerce.reports', 'e_commerce.reviews', 'e_commerce.tags', 'e_commerce.users', 'rest_framework']" >> mysite/settings.py
           echo "from django.urls import include" >> mysite/urls.py
           echo "urlpatterns += [path('', include('e_commerce.urls'))]" >> mysite/urls.py
 
       - name: Run Migrations, System checks and test
         run: |
           cd mysite
+          python manage.py makemigrations
           python manage.py migrate
           python manage.py check
           python manage.py test

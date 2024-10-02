@@ -7,4 +7,7 @@ from rest_framework.test import APITestCase
 class CategoryViewSetTests(APITestCase):
     """Category ViewSet tests"""
 
-    pass
+    def setUp(self) -> None:
+        """Setup before tests"""
+
+        return super().setUp()

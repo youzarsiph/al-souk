@@ -1,11 +1,11 @@
-""" Tests for e_commerce.reviews.models """
+""" Tests for e_commerce.users.models """
 
 from django.test import TestCase
 
 
 # Create your tests here.
-class ReviewTests(TestCase):
-    """Review model tests"""
+class UserTests(TestCase):
+    """User model tests"""
 
     def setUp(self) -> None:
         """Setup before tests"""
