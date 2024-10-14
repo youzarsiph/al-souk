@@ -18,21 +18,25 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          python -m venv .venv
+          source .vevn/bin/activate
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
       - name: Create a Django project and configure settings
         run: |
+          source .vevn/bin/activate
           python -m django startproject mysite
-          mv e_commerce mysite
+          mv souk_al_furqan mysite
           cd mysite
           echo "AUTH_USER_MODEL = 'users.User'" >> mysite/settings.py
-          echo "INSTALLED_APPS += ['e_commerce', 'e_commerce.categories', 'e_commerce.items', 'e_commerce.orders', 'e_commerce.products', 'e_commerce.reports', 'e_commerce.reviews', 'e_commerce.tags', 'e_commerce.users', 'rest_framework']" >> mysite/settings.py
+          echo "INSTALLED_APPS += ['souk_al_fuqan', 'souk_al_furqan.categories', 'souk_al_furqan.items', 'souk_al_fuqan.orders', 'souk_al_fuqan.products', 'souk_al_fuqan.reports', 'souk_al_furqan.reviews', 'souk_al_fuqan.tags', 'souk_al_fuqan.users', 'rest_framework']" >> mysite/settings.py
           echo "from django.urls import include" >> mysite/urls.py
-          echo "urlpatterns += [path('', include('e_commerce.urls'))]" >> mysite/urls.py
+          echo "urlpatterns += [path('', include('souk_al_fuqan.urls'))]" >> mysite/urls.py
 
       - name: Run Migrations, System checks and test
         run: |
+          source .vevn/bin/activate
           cd mysite
           python manage.py makemigrations
           python manage.py migrate
